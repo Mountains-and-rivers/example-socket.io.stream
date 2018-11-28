@@ -8,20 +8,18 @@ var io = require('socket.io').listen(server);
 var ss = require('socket.io-stream');
 var path = require('path');
 
-server.listen(8000);
+server.listen(8888);
 console.log('Server run...');
 
+app.use(express.static(path.join(__dirname, 'js')));
 // Never do this on your project! Thus access to the files are not safe.
 // This is just an example :)
 app.get('/*', function (req, res) {
-    res.sendfile(__dirname + '/' + req.params[0]);
+    res.sendFile(__dirname + '/' + req.params[0]);
 });
 
-io.sockets.on('connection', function (socket) {
-
-    ss(socket).on('send-file', function(stream, data) {
-        var filename = path.basename(data.name);
-        stream.pipe(fs.createWriteStream(filename));
+io.on('connection', function (socket) {
+    ss(socket).on('send-file', function(stream,fileName) {
+        stream.pipe(fs.createWriteStream(fileName));
     });
-
 });
