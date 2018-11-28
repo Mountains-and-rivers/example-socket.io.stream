@@ -11,7 +11,7 @@ For this example I used `express`, `socket.io` and `socket.io-stream`.
 
 You need to have installed node.js!
 
-`git clone https://github.com/fabiorogeriosj/example-socket.io.stream.git`
+`git clone https://github.com/Mountains-and-rivers/example-socket.io.stream.git`
 
 `npm install`
 
