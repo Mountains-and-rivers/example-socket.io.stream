@@ -7,7 +7,6 @@ $(document).ready(function (){
   var socket = io.connect(location.href);
 
   $('#file').change(function(e) {
-    console.log("0832804r0w7e9r79w0ery9")
     var file = e.target.files[0];
     var stream = ss.createStream();
     // upload a file to the server.
