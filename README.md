@@ -21,4 +21,4 @@ You need to have installed node.js!
 
 ## Result 
 
-Open your browser to link `http://localhost:8000/` and select the file.
+Open your browser to link `http://localhost:8888/` and select the file.
